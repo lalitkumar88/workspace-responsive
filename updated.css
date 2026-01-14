@@ -1,0 +1,349 @@
+.mw100 {
+  max-width: 100vw !important;
+}
+
+/* ===============================
+   WORKSPACE LIST
+================================ */
+
+.button-container {
+  position: absolute;
+  right: 0;
+  top: -46px;
+}
+
+.card {
+  --status: var(--primary-color);
+  border-radius: 5px;
+  position: relative;
+  margin-bottom: 6px;
+  padding: 12px 16px 12px 28px;
+  background-color: var(--white-color);
+  border: 1px solid var(--border-color);
+  width: calc(100vw - (2.5 * var(--main-padding)));
+}
+
+.card::before {
+  left: 0;
+  top: 0;
+  content: "";
+  width: 12px;
+  height: 100%;
+  background: var(--status);
+  position: absolute;
+  display: inline-block;
+  border-radius: 5px 0 0 5px;
+}
+
+.header {
+  position: relative;
+  font-weight: 600;
+}
+
+.title {
+  width: 30%;
+  display: inline-block;
+  padding-bottom: 3px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid var(--muted-color);
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  top: 1.8rem;
+}
+
+.opened {
+  top: 0rem;
+}
+
+.actions i::before {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.actions i:first-child::before {
+  font-size: 32px;
+}
+
+.opened i::before {
+  font-size: 18px;
+}
+
+.opened i:first-child::before {
+  font-size: 28px;
+}
+
+.apps {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.apps a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+}
+
+.details {
+  margin-bottom: 16px;
+  display: flex;
+  column-gap: 60px;
+  row-gap: 16px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+/* ===============================
+   SHARED USERS
+================================ */
+
+.sharedUsers h3 {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  min-width: max-content;
+  align-items: center;
+}
+
+.sharedUsers h3 span {
+  font-size: 2rem;
+}
+
+.userList {
+  max-height: 315px;
+  overflow-y: auto;
+}
+
+/* ===============================
+   WORKSPACE CREATE
+================================ */
+
+.ws-form-progress {
+  gap: 32px;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 3rem;
+  border: 1px solid var(--border-color);
+  background-color: var(--gray-50-color);
+}
+
+.progress-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.progress-item:not(:first-of-type):before {
+  content: "";
+  width: 2px;
+  height: 32px;
+  position: absolute;
+  left: 11px;
+  top: -32px;
+  background-color: var(--muted-color);
+}
+
+.progress-item span:first-of-type {
+  display: inline-flex;
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--info-color);
+  border-radius: 50%;
+  margin-right: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress-item span:first-of-type::before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: var(--info-color);
+}
+
+.completed {
+  border: 1px solid var(--success-color) !important;
+}
+
+.completed::before {
+  background-color: var(--success-color) !important;
+}
+
+.completed::after {
+  content: "\f272";
+  font-family: bootstrap-icons !important;
+  color: var(--white-color);
+  position: absolute;
+}
+
+.upcomming {
+  border: 1px solid var(--muted-color) !important;
+}
+
+.upcomming::before {
+  background-color: var(--muted-color) !important;
+}
+
+.ws-form {
+  width: 70%;
+  background-color: var(--white-color);
+  padding: 32px;
+  border: 1px solid var(--border-color);
+}
+
+.ws-form h3 i::before {
+  font-size: 2rem;
+}
+
+.disabled {
+  pointer-events: none;
+}
+
+/* ===============================
+   DELETE / MODALS
+================================ */
+
+.delete-ws {
+  min-width: 540px;
+  min-height: 250px;
+}
+
+.success-ws {
+  min-width: 500px;
+  min-height: 200px;
+}
+
+.share-ws {
+  min-width: 470px;
+  min-height: 150px;
+}
+
+.delete-ws-dialog {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  width: 90%;
+  margin: auto;
+  align-items: center;
+}
+
+.err-type::before {
+  font-size: 56px;
+}
+
+/* ===============================
+   BUTTON STYLES
+================================ */
+
+.dots,
+.page {
+  width: 36px;
+  height: 36px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  background: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dots {
+  padding-bottom: 8px;
+}
+
+.active {
+  background-color: var(--teal-color) !important;
+  color: white;
+}
+
+/* =================================================
+   RESPONSIVE OVERRIDES (NO DESKTOP CHANGES)
+================================================= */
+
+@media (max-width: 991px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  .ws-form-progress,
+  .ws-form {
+    width: 100%;
+  }
+
+  .ws-form-progress {
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 1rem;
+    gap: 12px;
+  }
+
+  .col-lg-8 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .ws-form form .d-flex {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ws-form label {
+    min-width: 100% !important;
+  }
+
+  .ws-form .form-control {
+    width: 100%;
+  }
+
+  .ws-form-progress {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+  }
+
+  .progress-item {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .progress-item:not(:first-of-type):before {
+    display: none;
+  }
+
+  .ws-form button {
+    width: 100% !important;
+    float: none !important;
+    margin: 8px 0 !important;
+  }
+
+  .button-container,
+  .actions {
+    position: static;
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 575px) {
+  .delete-ws,
+  .success-ws,
+  .share-ws {
+    min-width: auto;
+    width: 95vw;
+  }
+}
